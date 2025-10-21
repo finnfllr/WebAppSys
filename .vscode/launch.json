@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BeanBeispielApplication",
+            "request": "launch",
+            "mainClass": "edu.fra.uas.BeanBeispielApplication",
+            "projectName": "BeanExample"
+        },
+        {
+            "type": "java",
             "name": "UserApplication",
             "request": "launch",
             "mainClass": "edu.fra.uas.UserApplication",
@@ -155,7 +162,8 @@
             "name": "BeanExampleApplication(1)",
             "request": "launch",
             "mainClass": "edu.fra.uas.BeanExampleApplication",
-            "projectName": "BeanExample"
+            "projectName": "BeanExample",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=53874 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=BeanExample"
         },
         {
             "type": "java",
