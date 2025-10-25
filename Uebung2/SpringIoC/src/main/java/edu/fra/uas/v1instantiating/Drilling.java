@@ -7,6 +7,7 @@ public class Drilling {
     private static final Logger LOGGER = LoggerFactory.getLogger(Drilling.class);
 
     public void work() {
+
         LOGGER.info(" --> drill a hole into the wall");
     }
 }

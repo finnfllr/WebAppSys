@@ -6,22 +6,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SecondService {
+public class ThirdService {
 
-    @Autowired private ThirdService thirdService;
-	private static final Logger log = LoggerFactory.getLogger(SecondService.class);
+    private static final Logger log = LoggerFactory.getLogger(ThirdService.class);
 
     @Autowired private CounterService counterService;
 
+    public ThirdService() {
 
-    public SecondService() {
-    //    this.thirdService = new ThirdService();
     }
 
-	public void doSomething() {
+    public void doSomething() {
 
-        log.info("secondService --> doSomething()");
-	}
+        log.info("thirdService --> doSomething()");
+    }
     public void performCount() {
         int currentCount = counterService.count(); // HIER wird count() aufgerufen
         System.out.println("FirstService: Zählerstand ist " + currentCount);

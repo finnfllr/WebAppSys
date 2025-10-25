@@ -15,7 +15,8 @@ public class SpringCompleteBeanLifeCycleApplication {
 	private CompleteService smallService;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(SpringCompleteBeanLifeCycleApplication.class, args);
+
+        SpringApplication.run(SpringCompleteBeanLifeCycleApplication.class, args);
 	}
 
 	@Bean

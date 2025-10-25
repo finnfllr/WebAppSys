@@ -21,13 +21,14 @@ public class InitData {
         log.debug("### Initialize Data ###");
 
         log.debug("create user admin");
-        User user = new User();
+        User user = new User(); //Objekt wird erstellt
+        //Attribute werden gesetzt:
         user.setRole("ADMIN");
         user.setFirstName("Administrator");
         user.setLastName("Administrator");
         user.setEmail("admin@example.com");
         user.setPassword("extremeSecurePassword1234");
-        userService.createUser(user);
+        userService.createUser(user); //Objekt wird in DB gespeichert
 
         log.debug("create user alice");
         user = new User();

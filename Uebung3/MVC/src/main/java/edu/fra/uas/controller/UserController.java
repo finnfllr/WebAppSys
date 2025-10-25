@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import edu.fra.uas.model.User;
 import edu.fra.uas.service.UserService;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 @Controller
 public class UserController {
@@ -46,7 +47,7 @@ public class UserController {
 
     // http://127.0.0.1/find?id=1
     @RequestMapping(value = {"/find"}, method = RequestMethod.GET)
-    public String find(@RequestParam("id") Long userId, Model model) {
+    public String find(@RequestParam("id") Long userId, Model model) throws MethodArgumentTypeMismatchException {
         log.debug("find() is called");
         User user = userService.getUserById(userId);
         model.addAttribute("user", user);

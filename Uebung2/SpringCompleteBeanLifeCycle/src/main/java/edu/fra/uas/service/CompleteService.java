@@ -23,12 +23,14 @@ public class CompleteService implements ApplicationContextAware, BeanFactoryAwar
 	private String privateAttribute = "INIT";
 	
 	public void setPrivateAttribute(String privateAttribute) {
-		this.privateAttribute = privateAttribute;
+
+        this.privateAttribute = privateAttribute;
 	}
 	
 	@Override
 	public void setBeanName(String name) {
-		log.info("setBeanName() --> " + name);		
+
+        log.info("setBeanName() --> " + name);
 	}
 	
 	@Override
@@ -43,7 +45,8 @@ public class CompleteService implements ApplicationContextAware, BeanFactoryAwar
 	
 	@PostConstruct
         public void postConstruct() {
-		log.info("postConstruct() --> " + privateAttribute);
+
+        log.info("postConstruct() --> " + privateAttribute);
 	}
 	
 	@Override

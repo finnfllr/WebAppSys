@@ -1,4 +1,4 @@
-package edu.fra.uas.service;
+package edu.fra.uas.notendurchschnitt.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
