@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Neue Note eintragen</title>
+    <style>
+        label {
+            display: block; /* Macht jedes Label zu einem Block für bessere Übersicht */
+            margin-top: 10px;
+        }
+        input[type="submit"] {
+            margin-top: 20px;
+            padding: 10px 15px;
+        }
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Neue Note hinzufügen</h1>
+
+<form action="/addNote" method="post">
+
+    <p>
+        <span th:if="${error}" th:text="${error}" class="error-message"></span>
+    </p>
+
+    <label for="wert">Note (z.B. 1.3, 2.0):</label>
+    <input type="text" id="wert" name="wert" required/>
+
+    <label for="gewichtung">Gewichtung (ganze Zahl):</label>
+    <input type="number" id="gewichtung" name="gewichtung" required min="1"/>
+
+    <input type="submit" value="Note speichern"/>
+</form>
+
+<p><a href="/list">Zurück zur Notenliste</a></p>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Liste deiner Noten</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Deine Notenliste</h1>
+        <table>
+            <tr>
+                <th>Note</th>
+                <th>Gewichtung</th>
+            </tr>
+            <tr th:each="note : ${note}">
+                <td th:text="${note.wert}">Id</td>
+                <td th:text="${note.gewichtung}">Role</td>
+        </table>
+        <p>
+            Dein Notendurchschnitt ist: <span th:text="${durchschnitt}"></span>
+        </p>
+        <br/>
+        <p>Folgende Aktionen kannst du ausführen:</p>
+        <ul>
+            <li><a href="/add">Füge eine Note hinzu</a></li>
+        </ul>
+        <ul>
+            <li><a href="/delete">Alle Noten löschen</a></li>
+        </ul>
+        <footer>
+            <small id="today"></small>
+        </footer>
+        <script>
+            var date = new Date();
+            var year = date.getFullYear();
+            document.getElementById("today").innerHTML = "&copy; FRA-UAS MVC Example, "+year;
+        </script> 
+    </body>
+</html>
