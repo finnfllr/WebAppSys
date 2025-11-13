@@ -33,7 +33,7 @@ public class NotenController {
     @GetMapping("/list")
     public String list(Model model) {
         log.debug("list() is called");
-        List<Note> notenListe = NotenRechnerService.getNotenListe();
+        List<Note> notenListe = notenRechnerService.getNotenListe();
         model.addAttribute("note", notenListe);
 
         double durchschnitt = notenRechnerService.berechneDurchschnitt();
@@ -60,7 +60,7 @@ public class NotenController {
             double wert = Double.parseDouble(wertString);
 
             // 2. Daten verarbeiten (Service-Schicht)
-            notenRechnerService.addNote(wert, gewichtung);
+            notenRechnerService.addGrade(wert, gewichtung);
 
             // 3. Umleiten (POST/REDIRECT/GET Pattern)
             // Spring sendet 302 an den Browser, der dann GET /list abruft
@@ -78,14 +78,14 @@ public class NotenController {
 
     @GetMapping("/delete")
     public String clearNotes() {
-        notenRechnerService.clearNotes();
+        notenRechnerService.clearGrades();
         log.info("Noten werden zurückgesetzt.");
         return "redirect:/list";
     }
 
 
     public void addNote(double wert, int gewichtung) {
-        notenRechnerService.addNote(wert, gewichtung);
+        notenRechnerService.addGrade(wert, gewichtung);
         // KORREKTUR: Logging-Platzhalter verwenden
         log.trace("addNote: Wert {} mit Gewichtung {}", wert, gewichtung);
     }
@@ -98,7 +98,7 @@ public class NotenController {
     }
 
     public void clear() {
-        notenRechnerService.clearNotes();
+        notenRechnerService.clearGrades();
         log.info("Noten werden zurückgesetzt.");
     }
 }
