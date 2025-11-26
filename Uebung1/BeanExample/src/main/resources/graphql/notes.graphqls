@@ -1,0 +1,19 @@
+type Note {
+    wert: Float!
+    gewichtung: Int!
+}
+
+type NotenUebersichtDTO {
+    noten: [Note!]!
+    durchschnitt: Float!
+}
+
+type Query {
+    notes: [Note!]!
+    overview: NotenUebersichtDTO!
+}
+
+type Mutation {
+    addNote(wert: Float!, gewichtung: Int!): Note!
+    clearNotes: Boolean!
+}
